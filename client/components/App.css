@@ -48,8 +48,12 @@ span {
   margin-top: 1em;
 }
 
-.detail-container {
-  height: 100vh;
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50vh;
+  align-items: center;
 }
 
 .home-container {
@@ -60,6 +64,9 @@ span {
   align-items: center;
 }
 
+.vehicle-thumbnail {
+  width: 25vw;
+}
 
 
 

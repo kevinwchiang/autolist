@@ -11,10 +11,15 @@ class Search extends Component {
     }
     this.handleLink = this.handleLink.bind(this);
     this.fetchVehicles = this.fetchVehicles.bind(this);
+    this.loadMore = this.loadMore.bind(this);
+  }
+
+  loadMore() {
+    this.fetchVehicles();
   }
 
   handleLink(vehicle) {
-    this.props.onLink(vehicle.vin);
+    this.props.onLink(vehicle);
   }
 
   componentWillMount() {
@@ -44,12 +49,13 @@ class Search extends Component {
         {data.map((vehicle) => {
           return (
             <div key={vehicle.vin} className="search-vehicle">
-              <Link to='/details' onClick={() => handleLink(vehicle)}>
+              <Link to='/details' onClick={() => this.handleLink(vehicle)}>
                 {`${vehicle.make} ${vehicle.model} ${vehicle.year}`}
               </Link>
             </div>
           );
         })}
+        <button style={{ marginTop: '10px' }} onClick={this.loadMore}>Load more results</button>
       </div>
     );
   }

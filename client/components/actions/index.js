@@ -4,3 +4,10 @@ export const addSearch = prices => {
     prices
   }
 }
+
+export const addVehicle = vehicle => {
+  return {
+    type: 'ADD_VEHICLE',
+    vehicle
+  }
+}

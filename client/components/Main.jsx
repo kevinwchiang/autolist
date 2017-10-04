@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './containers/HomeConnected';
 import Search from './containers/SearchConnected';
-import Details from './Details';
+import Details from './containers/DetailsConnected';
 
 const Main = () => (
   <main>
