@@ -1,13 +1,9 @@
-export const addSearch = prices => {
-  return {
-    type: 'ADD_SEARCH',
-    prices
-  }
-}
+export const addSearch = prices => ({
+  type: 'ADD_SEARCH',
+  prices,
+});
 
-export const addVehicle = vehicle => {
-  return {
-    type: 'ADD_VEHICLE',
-    vehicle
-  }
-}
+export const addVehicle = vehicle => ({
+  type: 'ADD_VEHICLE',
+  vehicle,
+});

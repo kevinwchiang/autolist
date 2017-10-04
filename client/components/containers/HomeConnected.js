@@ -1,20 +1,20 @@
-import { connect } from 'react-redux'
-import { addSearch } from '../actions'
-import Home from '../Home'
+import { connect } from 'react-redux';
+import { addSearch } from '../actions';
+import Home from '../Home';
 
-const mapStateToProps = (state) => ({
-  search: state.search
-})
+const mapStateToProps = state => ({
+  search: state.search,
+});
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   onSearch: (prices) => {
-    dispatch(addSearch(prices))
-  } 
-})
+    dispatch(addSearch(prices));
+  },
+});
 
 const HomeConnect = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Home);
 
 export default HomeConnect;

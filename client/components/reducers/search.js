@@ -4,16 +4,16 @@ const search = (state = {}, action) => {
       return {
         ...state,
         minPrice: action.prices.minPrice,
-        maxPrice: action.prices.maxPrice
-      }
+        maxPrice: action.prices.maxPrice,
+      };
     case 'ADD_VEHICLE':
       return {
         ...state,
-        vehicle: action.vehicle
-      }
+        vehicle: action.vehicle,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
 export default search;

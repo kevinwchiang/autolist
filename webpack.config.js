@@ -12,7 +12,7 @@ module.exports = {
   entry: './client',
   output: {
     path: path.resolve('dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -21,8 +21,8 @@ module.exports = {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.css$/, loader: 'style-loader!css-loader' }
-    ]
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+    ],
   },
   plugins: [HtmlWebpackPluginConfig],
-}
+};

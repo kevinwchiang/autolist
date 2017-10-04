@@ -8,13 +8,13 @@ class Search extends Component {
     this.state = {
       data: [],
       page: 1,
-    }
+    };
     this.handleLink = this.handleLink.bind(this);
     this.fetchVehicles = this.fetchVehicles.bind(this);
     this.loadMore = this.loadMore.bind(this);
   }
 
-  loadMore() {
+  componentWillMount() {
     this.fetchVehicles();
   }
 
@@ -22,7 +22,7 @@ class Search extends Component {
     this.props.onLink(vehicle);
   }
 
-  componentWillMount() {
+  loadMore() {
     this.fetchVehicles();
   }
 
@@ -34,7 +34,7 @@ class Search extends Component {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-      }
+      },
     })
       .then(response => response.json())
       .then((body) => {
@@ -46,15 +46,13 @@ class Search extends Component {
     const { data } = this.state;
     return (
       <div className="search-container">
-        {data.map((vehicle) => {
-          return (
-            <div key={vehicle.vin} className="search-vehicle">
-              <Link to='/details' onClick={() => this.handleLink(vehicle)}>
-                {`${vehicle.make} ${vehicle.model} ${vehicle.year}`}
-              </Link>
-            </div>
-          );
-        })}
+        {data.map(vehicle => (
+          <div key={vehicle.vin} className="search-vehicle">
+            <Link to="/details" onClick={() => this.handleLink(vehicle)}>
+              {`${vehicle.make} ${vehicle.model} ${vehicle.year}`}
+            </Link>
+          </div>
+        ))}
         <button style={{ marginTop: '10px' }} onClick={this.loadMore}>Load more results</button>
       </div>
     );

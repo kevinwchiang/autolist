@@ -1,0 +1,9 @@
+{
+  "extends": "airbnb",
+  "globals": {
+      "navigator": false,
+      "fetch": false,
+      "window": false,
+      "document": false
+  }
+}

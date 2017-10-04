@@ -6,8 +6,8 @@ class Home extends Component {
     super(props);
     this.state = {
       minPrice: 0,
-      maxPrice: 0
-    }
+      maxPrice: 0,
+    };
     this.handleSearch = this.handleSearch.bind(this);
     this.minChange = this.minChange.bind(this);
     this.maxChange = this.maxChange.bind(this);
@@ -19,11 +19,11 @@ class Home extends Component {
   }
 
   minChange(event) {
-    this.setState({ minPrice: event.target.value })
+    this.setState({ minPrice: event.target.value });
   }
 
   maxChange(event) {
-    this.setState({ maxPrice: event.target.value })
+    this.setState({ maxPrice: event.target.value });
   }
 
   render() {
@@ -33,15 +33,15 @@ class Home extends Component {
         <input
           type="text"
           value={this.state.minPrice}
-          onChange={ (event) => this.minChange(event) }
+          onChange={event => this.minChange(event)}
         />
         <span>Max Price: </span>
         <input
           type="text"
           value={this.state.maxPrice}
-          onChange={ (event) => this.maxChange(event) }
+          onChange={event => this.maxChange(event)}
         />
-        <Link to='/search'>
+        <Link to="/search">
           <button onClick={this.handleSearch}>Search</button>
         </Link>
       </div>
